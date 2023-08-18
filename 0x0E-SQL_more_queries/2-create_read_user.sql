@@ -1,12 +1,7 @@
--- Creates the database hbtn_0d_2 and the user user_0d_2
--- The user_0d_2 has SELECT privilege on hbtn_0d_2 with password user_0d_2_pwd
-CREATE DATABASE
-    IF NOT EXISTS `hbtn_0d_2`;
-CREATE USER
-    IF NOT EXISTS 'user_0d_2'@'localhost'
-    IDENTIFIED BY 'user_0d_2_pwd';
-GRANT SELECT
-   ON `hbtn_0d_2`.*
-   TO 'user_0d_2'@'localhost'
-   IDENTIFIED BY 'user_0d_2_pwd';
-FLUSH PRIVILEGES;
+-- List shows without genre
+SELECT tv_shows.title, tsg.genre_id
+	FROM tv_shows
+	LEFT JOIN tv_show_genres AS tsg
+	ON tv_shows.id = tsg.show_id
+	WHERE tsg.genre_id IS NULL
+	ORDER BY tv_shows.title ASC, tsg.genre_id ASC;
