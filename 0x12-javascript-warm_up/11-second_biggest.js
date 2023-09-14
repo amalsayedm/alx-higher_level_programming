@@ -11,6 +11,6 @@ if (size <= 3) {
     array[i] = parseInt(process.argv[x]);
     i++;
   }
- array = array.sort(function (a, b) { return a - b; });
-  console.log(array[array.length-2]);
+  array = array.sort(function (a, b) { return a - b; });
+  console.log(array[array.length - 2]);
 }
