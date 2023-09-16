@@ -25,4 +25,5 @@ if __name__ == '__main__':
                    ORDER BY states.id ASC'.format(state_name))
 
     for row in cursor.fetchall():
-        print(row)
+        if row[1] == state_name:
+            print(row)
