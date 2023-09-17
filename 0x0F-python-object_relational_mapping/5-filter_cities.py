@@ -27,4 +27,3 @@ if __name__ == '__main__':
                    ORDER BY states.id ASC', (user_state,))
 
     print(', '.join([value[0] for value in cursor.fetchall()]))
-  
